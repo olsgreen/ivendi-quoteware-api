@@ -1,0 +1,21 @@
+{
+    "name": "olsgreen/ivendi-quoteware-api",
+    "description": "iVendi Quoteware API Client",
+    "type": "library",
+    "require": {
+        "olsgreen/abstract-api": "^1.2"
+    },
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Olsgreen\\IVendi\\Quoteware\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Oliver Green",
+            "email": "green2go@gmail.com"
+        }
+    ]
+}

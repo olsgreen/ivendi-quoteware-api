@@ -24,7 +24,7 @@ class Quoteware extends AbstractEndpoint
         $json = json_encode($request->toArray());
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception('Error encoding request body: ' . json_last_error_msg());
+            throw new \Exception('Error encoding request body: '.json_last_error_msg());
         }
 
         return $this->_post('/quotes', [], $json, ['Content-Type' => 'application/json']);

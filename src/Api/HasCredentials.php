@@ -20,7 +20,7 @@ trait HasCredentials
      */
     protected $quoteeUid;
 
-    public function getUsername():? string
+    public function getUsername(): ?string
     {
         return $this->username;
     }
@@ -36,7 +36,7 @@ trait HasCredentials
         return $this;
     }
 
-    public function getQuoteeUid():? string
+    public function getQuoteeUid(): ?string
     {
         return $this->quoteeUid;
     }

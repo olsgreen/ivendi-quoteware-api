@@ -70,7 +70,6 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
      */
     protected $entityType = EntityTypes::PERSONAL;
 
-
     /**
      * Vehicle registration mark if known.
      *
@@ -135,7 +134,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
 
     /**
      * Is the asset VAT Qualifying. Normally used for commercial
-     * Assets where VAT has been reclaimed
+     * Assets where VAT has been reclaimed.
      *
      * @var bool
      */
@@ -270,7 +269,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
         return $this;
     }
 
-    public function getRegistrationMark():? string
+    public function getRegistrationMark(): ?string
     {
         return $this->registrationMark;
     }
@@ -282,7 +281,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
         return $this;
     }
 
-    public function getRegistrationDate():? \DateTime
+    public function getRegistrationDate(): ?\DateTime
     {
         return $this->registrationDate;
     }
@@ -338,7 +337,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
         return $this;
     }
 
-    public function getVehicleClass():? string
+    public function getVehicleClass(): ?string
     {
         return $this->vehicleClass;
     }
@@ -354,7 +353,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
         return $this;
     }
 
-    public function getVehicleCondition():? string
+    public function getVehicleCondition(): ?string
     {
         return $this->vehicleCondition;
     }
@@ -394,7 +393,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
         return $this;
     }
 
-    public function getImageUrl():? string
+    public function getImageUrl(): ?string
     {
         return $this->imageUrl;
     }
@@ -443,93 +442,93 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
 
         return array_merge_recursive($this->additionalParameters, [
             'PlatformMeta' => null,
-            'HtmlOptions' => [
+            'HtmlOptions'  => [
                 'IncludeOptions' => false,
-                'AsHtml' =>false,
-                'ImageUrl' => $this->getImageUrl(),
-                'ReturnUrl' => null,
-                'Make' => null,
-                'Model' => null,
-                'Derivative' => null,
-                'Channel' => null,
-                'RegDate' => null,
-                'DealerId' => null,
+                'AsHtml'         => false,
+                'ImageUrl'       => $this->getImageUrl(),
+                'ReturnUrl'      => null,
+                'Make'           => null,
+                'Model'          => null,
+                'Derivative'     => null,
+                'Channel'        => null,
+                'RegDate'        => null,
+                'DealerId'       => null,
                 'VehicleMileage' => null,
-                'EncryptedVrm' => null
+                'EncryptedVrm'   => null,
             ],
             'Credentials' => [
                 'Username' => $this->getUsername(),
-                'Mode'=> 0
+                'Mode'     => 0,
             ],
             'DealershipEnrichment' => [
-                'IpAddress' => null,
-                'Email' => null,
-                'Postcode' => null,
-                'SearchMeta' => null,
-                'UserAgent' => null,
-                'UserGenerated' => true,
-                'TraceRequest' => false,
-                'PersistRequestResponse' => true
+                'IpAddress'              => null,
+                'Email'                  => null,
+                'Postcode'               => null,
+                'SearchMeta'             => null,
+                'UserAgent'              => null,
+                'UserGenerated'          => true,
+                'TraceRequest'           => false,
+                'PersistRequestResponse' => true,
             ],
             'QuoteRequests' => [
                 [
-                    'ProductRequestUID' => null,
+                    'ProductRequestUID'        => null,
                     'IsPlatformProductRequest' => false,
-                    'QuoteeUID' => $this->getQuoteeUid(),
-                    'GlobalRequestSettings' => null,
-                    'RequestSettings' => null,
-                    'RequestParameters' => null,
-                    'GlobalRequestParameters' => [
-                        'Rate' => 0,
-                        'RateType' => 'Default',
-                        'Commission' => 0,
-                        'CommissionType' => 'Default',
-                        'ComputationPath' => 'Default',
-                        'Term' => $this->getTerm(),
-                        'TermUnit' => $this->getTermUnits(),
+                    'QuoteeUID'                => $this->getQuoteeUid(),
+                    'GlobalRequestSettings'    => null,
+                    'RequestSettings'          => null,
+                    'RequestParameters'        => null,
+                    'GlobalRequestParameters'  => [
+                        'Rate'             => 0,
+                        'RateType'         => 'Default',
+                        'Commission'       => 0,
+                        'CommissionType'   => 'Default',
+                        'ComputationPath'  => 'Default',
+                        'Term'             => $this->getTerm(),
+                        'TermUnit'         => $this->getTermUnits(),
                         'PaymentRangeFrom' => 0,
-                        'PaymentRangeTo' => 0,
-                        'RegularPayment' => 0
+                        'PaymentRangeTo'   => 0,
+                        'RegularPayment'   => 0,
                     ],
                     'Requests' => [
                         [
-                            "CreditTier" => $this->getCreditTier(),
-                            "Figures" => [
-                                "CashPrice" => $this->getCashPrice(),
-                                "CashDeposit" => $this->getCashDeposit(),
-                                "Asset" => [
-                                    "ManualResidualValue" => 0,
-                                    "ResidualValueYear" => 0,
-                                    "ResidualValueMonth" => 0,
-                                    "AnnualDistance" => $this->getAnnualDistance(),
-                                    "PartExchange" => 0,
-                                    "OutstandingSettlement" => 0,
-                                    "VATIncluded" => $this->getVatIncluded() ? 'True' : 'None',
-                                    "VATQualifying" => $this->getvatQualifying() ? 'True' : 'None',
-                                    "Extras" => null
-                                ]
+                            'CreditTier' => $this->getCreditTier(),
+                            'Figures'    => [
+                                'CashPrice'   => $this->getCashPrice(),
+                                'CashDeposit' => $this->getCashDeposit(),
+                                'Asset'       => [
+                                    'ManualResidualValue'   => 0,
+                                    'ResidualValueYear'     => 0,
+                                    'ResidualValueMonth'    => 0,
+                                    'AnnualDistance'        => $this->getAnnualDistance(),
+                                    'PartExchange'          => 0,
+                                    'OutstandingSettlement' => 0,
+                                    'VATIncluded'           => $this->getVatIncluded() ? 'True' : 'None',
+                                    'VATQualifying'         => $this->getvatQualifying() ? 'True' : 'None',
+                                    'Extras'                => null,
+                                ],
                             ],
-                            "Asset" => [
-                                "CurrentOdometerReading" => $this->getCurrentOdometerReading(),
-                                "RegistrationDate" => $this->getRegistrationDate() ? $this->getRegistrationDate()->format('d/m/Y') : null,
-                                "RegistrationMark" => $this->getRegistrationMark(),
-                                "Condition" => $this->getVehicleCondition(),
-                                "Source" => "Default",
-                                "Identity" => $this->getIdentity(),
-                                "IdentityType" => $this->getIdentityType(),
-                                "StockIdentity" => null,
-                                "StockingDate" => null,
-                                "StockLocation" => null,
-                                "Class" => $this->getVehicleClass(),
-                                "CubicCentimetres" => 0,
-                                "EntityType" => $this->getEntityType(),
+                            'Asset' => [
+                                'CurrentOdometerReading' => $this->getCurrentOdometerReading(),
+                                'RegistrationDate'       => $this->getRegistrationDate() ? $this->getRegistrationDate()->format('d/m/Y') : null,
+                                'RegistrationMark'       => $this->getRegistrationMark(),
+                                'Condition'              => $this->getVehicleCondition(),
+                                'Source'                 => 'Default',
+                                'Identity'               => $this->getIdentity(),
+                                'IdentityType'           => $this->getIdentityType(),
+                                'StockIdentity'          => null,
+                                'StockingDate'           => null,
+                                'StockLocation'          => null,
+                                'Class'                  => $this->getVehicleClass(),
+                                'CubicCentimetres'       => 0,
+                                'EntityType'             => $this->getEntityType(),
                             ],
-                            "RequestSettings" => null,
-                            "RequestParameters" => null
-                        ]
-                    ]
-                ]
-            ]
+                            'RequestSettings'   => null,
+                            'RequestParameters' => null,
+                        ],
+                    ],
+                ],
+            ],
         ]);
     }
 }

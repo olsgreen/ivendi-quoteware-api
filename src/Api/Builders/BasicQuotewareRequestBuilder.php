@@ -36,7 +36,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
      *
      * @var float
      */
-    protected $cashDeposit;
+    protected $cashDeposit = 0;
 
     /**
      * Annual Distance Required for PCP quoting.
@@ -164,7 +164,6 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
         'username',
         'quoteeUid',
         'cashPrice',
-        'cashDeposit',
         'annualDistance',
         'term',
         'currentOdometerReading',

@@ -19,4 +19,6 @@ class CreditTiers extends AbstractEnum
     const VERY_GOOD = 'Tier2';
 
     const EXCELLENT = 'Tier1';
+
+    const NON_TIERED = 'NonTieredTier1';
 }

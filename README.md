@@ -29,6 +29,7 @@ Add the client to your project using composer.
         'term' => 48,
         'currentOdometerReading' => 12345,
         'identity' => 'FV10 XYB',
+        'registrationDate' => '2010-07-09T00:00:00.0000Z'
         'creditTier' => CreditTiers::EXCELLENT,
         'entityType' => EntityTypes::PERSONAL,
     ]);

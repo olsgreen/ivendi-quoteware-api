@@ -168,6 +168,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
         'term',
         'currentOdometerReading',
         'identity',
+        'registrationDate',
     ];
 
     public function getCreditTier()
@@ -509,7 +510,7 @@ class BasicQuotewareRequestBuilder extends \Olsgreen\AbstractApi\Builders\Abstra
                             ],
                             'Asset' => [
                                 'CurrentOdometerReading' => $this->getCurrentOdometerReading(),
-                                'RegistrationDate'       => $this->getRegistrationDate() ? $this->getRegistrationDate()->format('d/m/Y') : null,
+                                'RegistrationDate'       => $this->getRegistrationDate() ? $this->getRegistrationDate()->format('Y-m-d\T00:00:00.0000\Z') : null,
                                 'RegistrationMark'       => $this->getRegistrationMark(),
                                 'Condition'              => $this->getVehicleCondition(),
                                 'Source'                 => 'Default',
